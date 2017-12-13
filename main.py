@@ -46,7 +46,7 @@ def upload():
 				if pred[2]==1:
 					kejru = "Yes"
 			# return result
-			result = "./"+result
+			result = "/"+result
 			return render_template("output.html", output_image = result, face= face, modi= modi, kejru= kejru)
 			# return "file uploaded"
 
