@@ -1,3 +1,11 @@
 Face Detect and Recognize
 
 (for modi-kejriwal images)
+
+Modi, Kejriwal folder contain the images used for training.
+
+test-imgs contain some of the test images for modi and kejriwal.
+
+An image uploaded is saved to the upload folder and the output is saved in the static folder.
+
+python main.py
