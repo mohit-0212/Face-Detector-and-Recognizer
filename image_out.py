@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 import yaml
 
 clf = None
-faces = {"Modi":0, "Kejriwal":1}
+faces = {"Modi":0, "Kejriwal":1, "Random":2}
 
-# faces = {"Kejriwal":1}
+# faces = {"Random":2}
 
 def train():
 	x_train = []
@@ -73,13 +73,16 @@ def test_image(img_path):
 				# else:
 				l[1] = 1
 				cv2.rectangle(img_temp, (x, y), (x+a, y+b), (0, 255, 0), 2)
-			else:
+			elif out==1:
 				# print out, conf
 				# if conf<=0.45:
 				# 	cv2.rectangle(img_temp, (x, y), (x+a, y+b), (0, 255, 255), 2)
 				# else:
 				l[2] = 1
 				cv2.rectangle(img_temp, (x, y), (x+a, y+b), (0, 0, 255), 2)
+			else:
+				cv2.rectangle(img_temp, (x, y), (x+a, y+b), (0, 255, 255), 2)
+
 		# print save_path
 		cv2.imwrite(save_path,img_temp)
 		return save_path,l
@@ -100,7 +103,7 @@ def out(img_path):
 	# cv2.imwrite(save_path,img_out)
 	# plt.imshow(cv2.cvtColor(img_out, cv2.COLOR_BGR2RGB))
 	# plt.savefig(save_path)
-	print save_path
+	# print save_path
 	return save_path, l
 
-# print out("1.jpg")
+# print out("photo_2.jpg")
